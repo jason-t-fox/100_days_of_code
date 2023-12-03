@@ -44,7 +44,7 @@ except:
    print("Please choose a valid number.")
    exit()
 user_choice = int(user_choice)
-if user_choice > 2:
+if user_choice > 2 or user_choice < 0:
   print("Please choose a valid number.")
   exit()
 #possible to wrap the user input section into a function and rerun it on an invalid input.  If this class doesn't cover this sort of thing later, I will try to add it in.
