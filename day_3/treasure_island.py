@@ -43,7 +43,7 @@ else:
     print("You walk into a wall, fall down, and bump your head!")
     exit
 
-# original code from the lesson had three layers of nested if statements and harder to read then it needed to be. The structure (above) is cleaner, at least in my opinion.
+# original code from the lesson had three layers of nested if statements and was harder to read then it needed to be. The structure (above) is cleaner, at least in my opinion.
 
 #choice1 = input('You\'re at a cross road. Where do you want to go? Type "left" or "right" \n').lower()
 #if choice1 == "left":
