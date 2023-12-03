@@ -1,6 +1,7 @@
 import random
 
 #very modern graphics!
+#initialize variables
 rock = '''
     _______
 ---'   ____)
@@ -30,7 +31,7 @@ scissors = '''
 ---.__(___)
 Scissors!
 '''
-#initialize variables
+
 ascii_images = [rock, paper, scissors]
 computer_choice = random.randint(0,2)
 
