@@ -17,7 +17,7 @@ for _ in range(answer_len):
 print(hangman_art.logo)
 #print(answer)
 print(f"The word has {answer_len} characters.")
-print(answer_display)
+print(''.join(answer_display))
 
 #begin
 while not game_over:
