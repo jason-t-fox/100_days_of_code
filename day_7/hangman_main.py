@@ -11,14 +11,15 @@ user_guesses = []
 game_over = False
 
 
-print(answer_len)
+
 for _ in range(answer_len):
     answer_display.append("_")
 
 
 
-# print(hangman_art.logo)
-print(answer)
+print(hangman_art.logo)
+#print(answer)
+print(f"The word has {answer_len} characters.")
 
 while not game_over:
     user_guess = input("Guess a letter: ").lower()
@@ -45,5 +46,5 @@ while not game_over:
     if user_lives == 0:
         game_over = True
         print(hangman_art.stages[user_lives])
-        print("you lost!")
+        print(f"you lost! The answer was {answer}")
 
