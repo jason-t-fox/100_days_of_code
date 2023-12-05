@@ -10,17 +10,16 @@ user_lives = 6
 user_guesses = []
 game_over = False
 
-
-
+#set initial display
 for _ in range(answer_len):
     answer_display.append("_")
-
-
 
 print(hangman_art.logo)
 #print(answer)
 print(f"The word has {answer_len} characters.")
+print(answer_display)
 
+#begin
 while not game_over:
     user_guess = input("Guess a letter: ").lower()
 
