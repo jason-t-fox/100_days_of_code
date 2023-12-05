@@ -1,10 +1,12 @@
 import os
 
+
 def clear_screen():
     if os.name == "nt":
         os.system("cls")
     else:
         os.system("clear")
+
 
 def main():
     auction_ongoing = True
@@ -37,5 +39,6 @@ def main():
             max_bid_key = max(bids, key=bids.get)
             print(f"{max_bid_key} wins with a bid of {max_bid_value}!")
             auction_ongoing = False
+
 
 main()
