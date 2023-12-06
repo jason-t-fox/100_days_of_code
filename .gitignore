@@ -6,3 +6,5 @@
 /.idea/vcs.xml
 __pycache__/
 100_days_of_code.code-workspace
+.conda/
+.venv/

@@ -13,14 +13,10 @@ def multiply(n1, n2):
 def divide(n1, n2):
     return n1 / n2
 
-#variables
-operations = {"+": add, "-": subtract, "/": divide, "*": multiply}
-continue_calculating = True
-
-#begin program
-
 print(art.logo)
 def calculator():
+    operations = {"+": add, "-": subtract, "/": divide, "*": multiply}
+    continue_calculating = True
     num1 = float(input("What's the first number? ")) #input first number
     for value in operations:
         print(value)
