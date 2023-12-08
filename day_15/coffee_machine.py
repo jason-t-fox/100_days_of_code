@@ -14,40 +14,29 @@ def coffee_main():
             menu_selection = input("What would you like? (espresso/latte/cappuccino): ").lower()
             if menu_selection == "off":  # turn machine off
                 print("Turning machine off.  Have a nice day!")
-                exit()
+                exit(0)
             elif menu_selection == "report":  # run inventory report
                 for key, value in resources.items():  # cycle through resources
                     print(f"{key.title()}: {value['amount']}{value['uom']}")
                 print(f"Money: ${profit:,.2f}")  # print money collected
             elif menu_selection in ["espresso", "latte", "cappuccino"]:  # select coffee
                 # check resource availability, restart if not enough ingredients
-                for ingredients_key, ingredients_value in coffee_menu[menu_selection]["ingredients"].items():
-                    for resources_key, resources_value in resources.items():
-                        if ingredients_key == resources_key:
-                            if ingredients_value > resources_value['amount']:
-                                print(f"Sorry there is not enough {ingredients_key}.")
-                                restart = True
-                print(f"An espresso will cost ${coffee_menu[menu_selection]['cost']:.2f}")  # enter money
-                num_quarters = int(input("Please insert number of quarters: "))
-                money_entered = num_quarters * coins['quarter']
-                print(f"${money_entered:.2f} entered so far")
-                num_quarters = int(input("Please insert number of dimes: "))
-                money_entered += num_quarters * coins['dime']
-                print(f"${money_entered:.2f} entered so far")
-                num_quarters = int(input("Please insert number of nickels: "))
-                money_entered += num_quarters * coins['nickel']
-                print(f"${money_entered:.2f} entered so far")
-                num_quarters = int(input("Please insert number of pennies: "))
-                money_entered += num_quarters * coins['penny']
-                print(f"${money_entered:.2f} entered so far")
+                for ingredient, amount_needed in coffee_menu[menu_selection]["ingredients"].items():  # begin loop
+                    if amount_needed > resources[ingredient]['amount']:  # check for sufficient ingredients
+                        print(f"Sorry there is not enough {ingredient}.")
+                        restart = True  # restart if insufficient ingredients, otherwise exit loop
+                print(f"An espresso will cost ${coffee_menu[menu_selection]['cost']:.2f}")
+                money_entered = 0  # enter money
+                for coin, value in coins.items():
+                    num_coins = int(input(f"Please insert number of {coin}s: "))
+                    money_entered += num_coins * value
+                    print(f"${money_entered:.2f} entered so far")  # end money entered loop
                 if money_entered >= coffee_menu[menu_selection]['cost']:  # check if enough money
                     change = money_entered - coffee_menu[menu_selection]['cost']  # transact if enough money
                     print(f"Here is your {menu_selection} and your change of ${change:.2f}")
                     profit += money_entered - change  # running total of money
-                    for ingredients_key, ingredients_value in coffee_menu[menu_selection]["ingredients"].items():
-                        for resources_key, resources_value in resources.items():
-                            if ingredients_key == resources_key:  # loop to deduct ingredients on transaction
-                                resources_value['amount'] -= ingredients_value
+                    for ingredient, amount_used in coffee_menu[menu_selection]["ingredients"].items():
+                        resources[ingredient]['amount'] -= amount_used
                 else:  # if not enough money, restart and do not transact
                     print("That wasn't enough money")
                     restart = True
