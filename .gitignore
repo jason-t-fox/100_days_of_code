@@ -1,9 +1,4 @@
-/.idea/100_days_of_code.iml
-/.idea/runConfigurations/_template__of_Python.xml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/vcs.xml
+.idea/
 __pycache__/
 100_days_of_code.code-workspace
 .conda/
