@@ -49,7 +49,7 @@ def challenge4(internal_turtle, length_of_walk):
 
 
 def get_colors(internal_turtle, num_colors):
-    """only used one time to extract the color_list variable in main.py"""
+    """only used one time to extract the color_list variable in squirrel_main.py"""
     colors = colorgram.extract("photo-1500964757637-c85e8a162699.jpg", num_colors)
     color_list = []
     for _ in range(num_colors):
