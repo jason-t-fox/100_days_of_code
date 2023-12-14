@@ -34,3 +34,4 @@ nato = [nato_dict[letter] for letter in name]
 # for letter in name:
 #     nato = nato_dict[letter]
 print(nato)
+
