@@ -38,3 +38,5 @@ def is_night():
 
 if iss_visible() is True and is_night() is True:
     pass  # do stuff in this event, not implemented
+
+# it would be interesting to change this to plot ISS progress on a globe.
