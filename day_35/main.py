@@ -12,4 +12,4 @@ parameters = {
 }
 
 weather_data = requests.get(url, params=parameters)
-print(weather_data.json())
+
