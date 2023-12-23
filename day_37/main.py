@@ -6,7 +6,7 @@ user_endpoint = "https://pixe.la/v1/users"
 username = "username"
 token = "token"
 headers = {"X-USER-TOKEN": token}
-graphid = "testgraph1"
+graphid = "test_graph1"
 today = datetime.date.today().strftime("%Y%m%d")
 
 create_user_params = {
@@ -44,4 +44,3 @@ create_dot_params = {
 
 delete_graph = requests.delete(url=create_dot_endpoint, headers=headers)
 print(delete_graph.text)
-
