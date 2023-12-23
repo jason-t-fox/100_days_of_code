@@ -42,5 +42,5 @@ create_dot_params = {
 # create_dot = requests.post(url=create_dot_endpoint, json=create_dot_params, headers=headers)
 # print(create_dot.text)
 
-delete_graph = requests.delete(url=create_dot_endpoint, headers=headers)
-print(delete_graph.text)
+# delete_graph = requests.delete(url=create_dot_endpoint, headers=headers)
+# print(delete_graph.text)
